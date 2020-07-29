@@ -1,3 +1,5 @@
+var port = process.env.PORT || 3000;
+
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -77,6 +79,6 @@ app.get("/", function(req,res){
     res.render("index.ejs",{demo:twet});
 });
 
-app.listen(3000,function(){
+app.listen(port,function(){
     console.log("Server Started");
 });
