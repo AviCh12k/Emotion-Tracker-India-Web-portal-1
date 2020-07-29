@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,600;1,700&display=swap');
+*{
+    box-sizing: border-box;
+    /* overflow-x: auto; */
+}
+.header{
+    height: 15vh;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    /* font-style: italic; */
+    text-align: center;
+    color: #000000;
+}
+.hero{
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    background: url(images/close-up-photo-of-assorted-color-of-push-pins-on-map-1078850.jpg) no-repeat center;
+    background-size: cover;
+}
+/* .layer{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.801),transparent);
+} */
+.state, .emotion{
+    /* margin-top: 100px; */
+    margin-left: 50vw;
+    transform: translateX(-50%);
+    position: relative;
+    z-index: 1000;
+}
+.plot{
+    margin-top: 100px;
+    width: 100vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* background: url(images/borders-2099205.svg) no-repeat center; */
+    /* background-size: cover; */
+}
+.linplot{
+    /* background-color: gray; */
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lin{
+    width: 90%;
+}
+.heading{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.heading h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    /* font-style: italic; */
+}
+.india-heatmap{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top : 100px;
+}
+.tweets{
+    height: 40vh;
+    overflow-y: scroll;
+}
