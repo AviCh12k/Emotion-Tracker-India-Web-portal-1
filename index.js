@@ -3,7 +3,9 @@ var port = process.env.PORT || 3000;
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-var twet = ""
+var twet = [];
+var newtwet = [];
+var xyz = "";
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
@@ -28,31 +30,39 @@ var T = new Twit({
 (async () => {
 
     //1. GET RECENT TWEETS
-    T.get('search/tweets', { q: '#corona since:2020-03-01', count: 10000 }, function(err, data, response) {
-      const tweets = data.statuses
-      // .map(tweet => `LANG:${franc(tweet.text)}:${tweet.text}`) //CHECK LANGUAGE
-      .map(tweet => tweet.text)
-      // .filter(tweet => tweet.toLowerCase().includes('elon'));
-      console.log(tweets);
-      console.log(typeof(tweets));
-      for(var i =0;i<tweets.length;i++){
-        // if (tweets[i].split(":")[1]=="eng"){
-        //   twet = twet + "<li>" + tweets[i].split(":") + "</li>"
-        // }
-        if(franc(tweets[i])=="eng"){
-          twet = twet + "<li>" + tweets[i] + "</li>"
-        }
-      }
-    })
+    // T.get('search/tweets', { q: '#coronavirus since:2020-03-01', count: 100000 }, function(err, data, response) {
+    //   const tweets = data.statuses
+    //   // .map(tweet => `LANG:${franc(tweet.text)}:${tweet.text}`) //CHECK LANGUAGE
+    //   .map(tweet => tweet.text)
+    //   // .filter(tweet => tweet.toLowerCase().includes('elon'));
+    //   console.log(tweets);
+    //   console.log(typeof(tweets));
+    //   for(var i =0;i<tweets.length;i++){
+    //     // if (tweets[i].split(":")[1]=="eng"){
+    //     //   twet = twet + "<li>" + tweets[i].split(":") + "</li>"
+    //     // }
+    //     if(franc(tweets[i])=="eng"){
+    //       twet = twet + "<li>" + tweets[i] + "</li>"
+    //     }
+    //   }
+    // })
 
     // //2. REAL TIME MONITORING USING STREAM (HASHTAG)
-    // var stream = T.stream('statuses/filter', { track: "coronavirus" })
-    // stream.on('tweet', function (tweet) {
-    //     console.log(tweet.text);
-    //     twet = tweet.text;
-    //     console.log('Language: ' + franc(tweet.text));
-    //     console.log('------');
-    // })
+    var stream = T.stream('statuses/filter', { track: "coronavirus" })
+    stream.on('tweet', function (tweet) {
+        console.log(tweet.text);
+        twet.push(tweet.text);
+        console.log(twet);
+        xyz = "";
+        var i = 0;
+        for( i = 0; i<twet.length;i++){
+          if(franc(twet[i])=="eng"){
+            xyz += "<li>" + twet[i] + "</li>"
+          }
+        };
+        console.log('Language: ' + franc(tweet.text));
+        console.log('------');
+    })
 
     // 3. REAL TIME MONITORING USING STREAM (LOCATION)
     // var sanFrancisco = [ '68.7', '8.4', '97.25', '37.6' ]
@@ -76,7 +86,10 @@ var T = new Twit({
 })();
 
 app.get("/", function(req,res){
-    res.render("index.ejs",{demo:twet});
+    res.render("index.ejs",{demo:xyz});
+    twet = [];
+    newtwet = [];
+    xyz = ""
 });
 
 app.listen(port,function(){
