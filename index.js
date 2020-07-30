@@ -48,11 +48,12 @@ var T = new Twit({
     // })
 
     // //2. REAL TIME MONITORING USING STREAM (HASHTAG)
-    var stream = T.stream('statuses/filter', { track: "coronavirus" })
+    var india = [ '68.7', '8.4', '97.25', '37.6' ]
+    var stream = T.stream('statuses/filter', { track: "coronavirus", locations: india })
     stream.on('tweet', function (tweet) {
         console.log(tweet.text);
         twet.push(tweet.text);
-        console.log(twet);
+        // console.log(twet);
         xyz = "";
         var i = 0;
         for( i = 0; i<twet.length;i++){
