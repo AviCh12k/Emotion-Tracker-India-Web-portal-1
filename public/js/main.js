@@ -575,13 +575,15 @@ $(".dropdown-item").on("click", function(event){
           
           Plotly.newPlot('myDiv', data, layout);
 
-          $(".lin").attr("src","images/Andhra Pradesh.jpg");
+          
         }
+        $(".lin").attr("src","images/" + event.target.innerHTML + ".jpg");
     }
     if (event.target.parentNode.parentNode.className.split(" ")[1] == "emotion"){
       $(".btn-emotion").text(event.target.innerHTML);
-      if(event.target.innerHTML == "Anger"){
-        $(".emotion-india").attr("src","images/Annotation 2020-07-22 231747.png");
-      }
+      $(".emotion-india").attr("src","images/"+ event.target.innerHTML + ".png");
+      // if(event.target.innerHTML == "Anger"){
+        
+      // }
     }
 })
