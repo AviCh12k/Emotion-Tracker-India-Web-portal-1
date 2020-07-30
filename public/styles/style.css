@@ -3,6 +3,9 @@
     box-sizing: border-box;
     /* overflow-x: auto; */
 }
+body{
+    overflow-x: hidden;
+}
 .header{
     height: 15vh;
     max-height: 200px;
@@ -44,6 +47,10 @@
     grid-template-columns: 1fr 1fr;
     /* background: url(images/borders-2099205.svg) no-repeat center; */
     /* background-size: cover; */
+    overflow-x: hidden;
+}
+#myDiv{
+    width: 50vw;
 }
 .linplot{
     /* background-color: gray; */
@@ -67,13 +74,17 @@
 }
 .india-heatmap{
     width: 100vw;
-    height: 70vh;
+    height: auto;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top : 50px;
+    overflow-x: hidden;
 }
 .tweets{
     height: 40vh;
     overflow-y: scroll;
+    width: 90vw;
+    margin: 0 auto;
 }
