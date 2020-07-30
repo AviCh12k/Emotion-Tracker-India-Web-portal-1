@@ -8,10 +8,12 @@ body{
 }
 .header{
     height: 15vh;
+    width: 100vw;
     max-height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(221, 221, 221);
 }
 .header h1{
     font-family: 'Montserrat', sans-serif;
@@ -48,6 +50,7 @@ body{
     /* background: url(images/borders-2099205.svg) no-repeat center; */
     /* background-size: cover; */
     overflow-x: hidden;
+    /* background-color: gray; */
 }
 #myDiv{
     width: 50vw;
@@ -62,6 +65,18 @@ body{
 .lin{
     width: 90%;
 }
+.seperator{
+    width: 80%;
+    height: 1px;
+    background-color: gray;
+    margin: 0 auto;
+}
+.verti-seperator{
+    height: 80%;
+    width: 1px;
+    background-color: gray;
+    margin: auto 0;
+}
 .heading{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -71,6 +86,13 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     /* font-style: italic; */
+}
+.small-heading{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 .india-heatmap{
     width: 100vw;
@@ -82,9 +104,17 @@ body{
     margin-top : 50px;
     overflow-x: hidden;
 }
-.tweets{
+.tweet_container{
+    height: 40vh;
+    width: 100vw;
+    overflow:hidden;
+    display: flex;
+    justify-content: space-around;
+}
+.tweets,.tweets_24 {
     height: 40vh;
     overflow-y: scroll;
-    width: 90vw;
+    width: 45vw;
     margin: 0 auto;
+    padding: 20px;
 }

@@ -44,6 +44,7 @@
         <div id='myDiv'></div>
         <div class = "linplot"><img class="lin" src="" alt=""></div>
     </div>
+    <div class="seperator"></div>
     <div class="heading">
         <h1>Emotion Wise India</h1>
     </div>
@@ -68,11 +69,20 @@
     <div class = "india-heatmap">
         <img class="emotion-india" src="" alt="">
     </div>
-    <div class="heading">
-        <h1>Realtime Coronavirus Related Tweets</h1>
-    </div>
-    <div class="tweets jumbotron">
-        <ul><%- demo %></ul>
+    <div class="seperator"></div>
+    <div class="tweet_container d-flex justify-content-around">
+        <div>
+            <h3 class="small-heading">Tweets Related To Coronavirus In Last 24-Hrs</h3>
+            <div class="tweets_24 jumbotron">
+                <ul><%- demo_24 %></ul>
+            </div>
+        </div>
+        <div>
+            <h3 class="small-heading">Realtime Tweets Related To Coronavirus</h3>
+            <div class="tweets jumbotron">
+                <ul><%- demo %></ul>
+            </div>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
