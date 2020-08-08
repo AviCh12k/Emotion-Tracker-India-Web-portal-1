@@ -110,6 +110,7 @@ body{
     overflow:hidden;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 .tweets,.tweets_24 {
     height: 40vh;
@@ -118,3 +119,8 @@ body{
     margin: 0 auto;
     padding: 20px;
 }
+.footer{
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
