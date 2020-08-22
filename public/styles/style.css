@@ -113,7 +113,7 @@ body{
     margin-bottom: 20px;
 }
 .tweets,.tweets_24 {
-    height: 40vh;
+    height: 60vh;
     overflow-y: scroll;
     width: 45vw;
     margin: 0 auto;
