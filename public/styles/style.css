@@ -105,7 +105,7 @@ body{
     overflow-x: hidden;
 }
 .tweet_container{
-    height: 40vh;
+    height: 60vh;
     width: 100vw;
     overflow:hidden;
     display: flex;
